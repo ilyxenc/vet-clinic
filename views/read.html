@@ -1,0 +1,19 @@
+<!-- Вывод данных о животных с помощью конструкции {{ .ИМЯ }} -->
+<div class="wrapper">
+    <p class="caption">Список всех животных</p>
+
+    {{ range .Data }}
+
+    <div class="item">
+        <p><b>Имя:</b> <a href="/animals/{{ .Id }}">{{ .Name }}</a></p>
+        <p><b>Возраст:</b> {{ .Age }}</p>
+        <p><b>Вид:</b> {{ .Type }}</p>
+
+        <div class="buttons">
+            <a href="/animal/update/{{ .Id }}" class="button">Редактировать</a>
+            <a href="/animal/delete/{{ .Id }}" class="button red">Удалить</a>
+        </div>
+    </div>
+
+    {{ end }}
+</div>
